@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <!----- Customized Script ----->
+    <script>
+        !function (o, d, s, e, f) { var i, a, p, c = [], h = []; function t() { var t = "You must provide a supported major version."; try { if (!f) throw new Error(t); var e, n = "https://cdn.smooch.io/", r = "smooch"; e = "string" == typeof this.response ? JSON.parse(this.response) : this.response; var o = f.match(/([0-9]+)\.?([0-9]+)?\.?([0-9]+)?/), s = o && o[1], i = o && o[2], a = o && o[3], p = e["v" + s], c = e["v" + s + "." + i + ".patch"]; if (e.url || p || c) { var h = d.getElementsByTagName("script")[0], u = d.createElement("script"); if (u.async = !0, a) u.src = c || n + r + "." + f + ".min.js"; else { if (!(5 <= s && p)) throw new Error(t); u.src = p } h.parentNode.insertBefore(u, h) } } catch (e) { e.message === t && console.error(e) } } o[s] = { init: function () { i = arguments; var t = { then: function (e) { return h.push({ type: "t", next: e }), t }, catch: function (e) { return h.push({ type: "c", next: e }), t } }; return t }, on: function () { c.push(arguments) }, render: function () { a = arguments }, destroy: function () { p = arguments } }, o.__onWebMessengerHostReady__ = function (e) { if (delete o.__onWebMessengerHostReady__, o[s] = e, i) for (var t = e.init.apply(e, i), n = 0; n < h.length; n++) { var r = h[n]; t = "t" === r.type ? t.then(r.next) : t.catch(r.next) } a && e.render.apply(e, a), p && e.destroy.apply(e, p); for (n = 0; n < c.length; n++)e.on.apply(e, c[n]) }; var n = new XMLHttpRequest; n.addEventListener("load", t), n.open("GET", "https://" + e + ".webloader.smooch.io/", !0), n.responseType = "json", n.send() }(window, document, "Smooch", "64589dfbc4f29b1d211acf80", "5");
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="dmit-demo.js"></script>
+    <!----- End customized script ----->
+</head>
+
+<body>
+    <div class="w3-container">
+        <div class="w3-row w3-padding-16">
+            <div class="w3-col s12 m12 l12">
+                <button id="sample-error-btn" name="sample-error-btn" type="button" class="w3-button">Sample
+                    ERROR</button>
+            </div>
+        </div>
+    </div>
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4" style='border-radius: 3px; width: 500px;'>
+            <div class="w3-container w3-padding-24 w3-center">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <div style='padding-top:20px; text-align: center'>
+                    <p style='color: #e34c4c'>ไม่สามารถทำรายการได้ในขณะนี้ กรุณารอสักครู่และทำรายการใหม่อีกครั้ง</p>
+                </div>
+            </div>
+            <footer class="w3-container w3-center"
+                style="padding:10px; border-radius: 0 0 3px 3px; border-top: 1px solid #EBEBEB"> <button type="button"
+                    class="w3-button w3-padding-small" onclick="document.getElementById('id01').style.display='none'"
+                    style="background-color: #607d8b; color: #FFFFFF; border-radius: 3px">Close</button> </footer>
+        </div>
+    </div>
+</body>
+
+</html>
